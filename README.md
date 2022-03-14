@@ -1,6 +1,7 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/759f6c45-278e-41c2-b00b-0de511eb4937/deploy-status)](https://app.netlify.com/sites/dreamy-shockley-de2351/deploys)
+
 # countdown-site
 Countdown website written in Svelte.
-
 
 # create-svelte
 
