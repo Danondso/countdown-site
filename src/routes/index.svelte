@@ -45,5 +45,5 @@ const x = setInterval(function() {
     clearInterval(x);
     date = "HE GONE!";
   }
-}, 1000);
+}, 10);
 </script>
