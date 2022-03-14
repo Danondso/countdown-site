@@ -2,6 +2,7 @@
 <main>
     <h1>When Is Dublin Leaving?</h1>
     <p>{date}</p>
+    <p>{message}</p>
 </main>
 
 <style>
@@ -9,6 +10,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
         width: 100%;
     }
     h1 {
@@ -22,9 +24,10 @@
 // Set the date we're counting down to
 const countDownDate = new Date("Mar 18, 2022 17:00:00").getTime();
 let date = '';
+let message = '';
 
 // Update the count down every 1 second
-const x = setInterval(function() {
+const countDown = setInterval(function() {
   // Get today's date and time
   const now = new Date().getTime();
 
@@ -41,8 +44,17 @@ const x = setInterval(function() {
   date = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
   // If the count down is finished, write some text
+  if( days <= 4) {
+    message = 'Four Days Remain';
+  } else if(days <= 3) {
+    message = 'Three Days Remain';
+  } else if(days <= 2 ) {
+    message = 'He probably had his exit interview';
+  } else if(days <= 1) {
+    message = 'Dawn of the final day';
+  }
   if (distance < 0) {
-    clearInterval(x);
+    clearInterval(countDown);
     date = "HE GONE!";
   }
 }, 10);
