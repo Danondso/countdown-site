@@ -26,14 +26,13 @@
     	and (max-width: 715px) {
 	    	main { 
           width: 90vw; 
-          }
+        }
     }
 
     @media only screen
       and (min-width: 716px) {
         main {
         width: 50vw;
-        font-family: Fredoka;
         border: 2px solid black;
         border-radius: 10px;
         top: 50%;
