@@ -44,13 +44,14 @@ const countDown = setInterval(function() {
   date = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
   // If the count down is finished, write some text
-  if( days <= 4) {
-    message = 'Four Days Remain';
-  } else if(days <= 3) {
-    message = 'Three Days Remain';
-  } else if(days <= 2 ) {
-    message = 'He probably had his exit interview';
-  } else if(days <= 1) {
+  // If the count down is finished, write some text
+  if(days <= 4 && days > 3) {
+    message = 'Four Days Remain.';
+  } else if(days <= 3 && days > 2) {
+    message = 'Three Days Remain.';
+  } else if(days <= 2 && days > 1) {
+    message = 'He probably had his exit interview...';
+  } else if(days <= 1 && days > 0) {
     message = 'Dawn of the final day';
   }
   if (distance < 0) {
