@@ -1,4 +1,8 @@
 <!-- Display the countdown timer in an element -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+
 <main>
     <h1>When Is Dublin Leaving?</h1>
     <p>{date}</p>
@@ -11,8 +15,18 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        width: 100%;
+        width: 30vw;
+        font-family: Fredoka;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 2%;
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translateY(-50%);
+        box-shadow: 10px 10px 20px #aaaaaa;
     }
+
     h1 {
         font-size: 3rem;
     }
@@ -44,13 +58,13 @@ const countDown = setInterval(function() {
   date = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
   // If the count down is finished, write some text
-  if( days <= 4) {
-    message = 'Four Days Remain';
-  } else if(days <= 3) {
-    message = 'Three Days Remain';
-  } else if(days <= 2 ) {
-    message = 'He probably had his exit interview';
-  } else if(days <= 1) {
+  if(days <= 4 && days > 3) {
+    message = 'Four Days Remain.';
+  } else if(days <= 3 && days > 2) {
+    message = 'Three Days Remain.';
+  } else if(days <= 2 && days > 1) {
+    message = 'He probably had his exit interview...';
+  } else if(days <= 1 && days > 0) {
     message = 'Dawn of the final day';
   }
   if (distance < 0) {
