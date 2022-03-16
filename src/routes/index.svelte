@@ -15,20 +15,36 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        width: 30vw;
+        font-family: Fredoka;
+        padding: 2%;
+        position: absolute;
+        top: 20%;
+        word-wrap: break-word;
+    }
+
+    @media only screen 
+    	and (max-width: 715px) {
+	    	main { 
+          width: 90vw; 
+          }
+    }
+
+    @media only screen
+      and (min-width: 716px) {
+        main {
+        width: 50vw;
         font-family: Fredoka;
         border: 2px solid black;
         border-radius: 10px;
-        padding: 2%;
-        position: absolute;
         top: 50%;
-        left: 30%;
+        left: 25%;
         transform: translateY(-50%);
         box-shadow: 10px 10px 20px #aaaaaa;
+        }
     }
-
+		
     h1 {
-        font-size: 3rem;
+        font-size: 3rem 3rem 20%;
     }
     p {
         font-size: 2rem;
@@ -65,7 +81,7 @@ const countDown = setInterval(function() {
   } else if(days <= 2 && days > 1) {
     message = 'He probably had his exit interview...';
   } else if(days <= 1 && days > 0) {
-    message = 'Dawn of the final day';
+    message = 'Dawn of the final day.';
   }
   if (distance < 0) {
     clearInterval(countDown);
