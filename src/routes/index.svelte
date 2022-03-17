@@ -7,6 +7,18 @@
     <h1>When Is Dublin Leaving?</h1>
     <p>{date}</p>
     <p>{message}</p>
+    {#if showIframe}
+      <iframe 
+        width="40%"
+        height="40%"
+        src="https://www.youtube.com/embed/tiJzCahaN8w?autoplay=1"
+        title="Fake Your Death - My Chemical Romance"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      >
+      </iframe>
+    {/if}
 </main>
 
 <style>
@@ -52,6 +64,7 @@
 <script>
 // Set the date we're counting down to
 const countDownDate = new Date("Mar 18, 2022 17:00:00").getTime();
+let showIframe = false;
 let date = '';
 let message = '';
 
@@ -80,11 +93,14 @@ const countDown = setInterval(function() {
   } else if(days <= 2 && days > 1) {
     message = 'He probably had his exit interview...';
   } else if(days <= 1 && days > 0) {
+    message = 'The penultimate day.';
+  } else if (days <= 0) {
     message = 'Dawn of the final day.';
   }
   if (distance < 0) {
     clearInterval(countDown);
     date = "HE GONE!";
+    showIframe = true;
   }
 }, 10);
 </script>
