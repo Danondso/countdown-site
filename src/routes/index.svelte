@@ -33,7 +33,6 @@
 			message = 'The penultimate day.';
 		} else if (days <= 0) {
 			message = 'Dawn of the final day.';
-			showIframe = true;
 		}
 		if (days <= 0) {
 			clearInterval(countDown);
