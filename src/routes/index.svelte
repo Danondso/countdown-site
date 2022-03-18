@@ -34,7 +34,7 @@
 		} else if (days <= 0) {
 			message = 'Dawn of the final day.';
 		}
-		if (days <= 0) {
+		if (distance < 0) {
 			clearInterval(countDown);
 			date = 'HE GONE!';
 			message = '';
