@@ -2,6 +2,7 @@
 	// Set the date we're counting down to
 	const countDownDate = new Date('Mar 18, 2022 17:00:00').getTime();
 	let showIframe = false;
+  let generateImages = false;
 	let date = '';
 	let message = '';
 
@@ -39,8 +40,48 @@
 			date = 'HE GONE!';
 			message = '';
 			showIframe = true;
+      generateImages = true;
 		}
 	}, 10);
+
+  const rootPath = '../../';
+  const fileNames = [
+    'static/grimace-dance.gif',
+    // 'static/2cfd287697d00b60.png',
+    // 'static/3da55e899389a724.png',
+    // 'static/3fbdc99088e276eb.gif',
+    // 'static/4cc2fe105525c298.png',
+    // 'static/4d153b5dd573d83c.png',
+    // 'static/6e671af588287030.png',
+    // 'static/7cb1e80aa1b1566e.jpeg',
+    // 'static/9f0d1a5057e11a6c.png',
+    // 'static/56c611c39b6ce6e8.gif',
+    // 'static/74d675d75edb4f40.png',
+    // 'static/242b8176c333956f.png',
+    // 'static/653ce31f8e7de8b3.png',
+    // 'static/676b26bbed04d951.gif',
+    // 'static/02252d789c989c2f.png',
+    // 'static/6640e857780857f1.png',
+    // 'static/7402bae9acf28b60.png',
+    // 'static/41169bf4f99b4954.png',
+    // 'static/9925666badbf0957.png',
+    // 'static/a19eee8d9d516c93.png',
+    // 'static/ac2b2bbfbd43da20.png',
+    // 'static/ae3fd7fb053aa0ca.png',
+    // 'static/b80118d1a542faa9.png',
+    // 'static/ba32a2331373be41.png',
+    // 'static/c386069b56c2d09e.png',
+    // 'static/cedc9220d38489fa.png',
+    // 'static/cfbcc480c9501efb.png',
+    // 'static/d0a77d03b7c91c56.png',
+    // 'static/dd7cf8158ce45b12.png',
+    // 'static/e352b8b1e77d0afd.gif',
+    // 'static/e8778b391c8d6d4f.png',
+    // 'static/ec7aed54a96065c3.png',
+    // 'static/ef70f8c7500880e7.png',
+    // 'static/f90078da92c4533f.png',
+    // 'static/f31140892c11917e.png'
+  ];
 </script>
 
 <!-- Display the countdown timer in an element -->
@@ -62,6 +103,19 @@
 			allowfullscreen
 		/>
 	{/if}
+
+  {#if generateImages}
+    {#each fileNames as fileName}
+      <div 
+          class="flier" 
+          style:position="absolute"          
+          style:top=0
+          style:left=0
+      >
+        <img src={`${rootPath}${fileName}`} alt="That Flies Around" />
+      </div>
+    {/each}
+  {/if}
 </main>
 
 <style>
@@ -126,4 +180,58 @@
 			height: 300px;
 		}
 	}
+
+  .flier {
+	pointer-events: none;
+}
+
+.flier > * {
+/* Adjust animation duration to change the element’s speed */
+  animation: fly 50s linear infinite;
+  pointer-events: none !important;
+	transform: translateX(-120%) translateY(-120%) rotateZ(0);
+	position: fixed;
+	z-index: 999999;
+}
+
+ /* Keyframe values control where the element will begin
+    and end its trajectory across the screen. Each rule
+    represents a path the element follows across the screen. */
+
+
+@keyframes fly {
+
+	98.001%, 0% {
+    display: block;
+		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+	}
+
+	15% {
+		transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+	}
+
+	15.001%, 18% {
+		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+	}
+
+	40% {
+		transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+	}
+
+	40.001%, 43% {
+		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+	}
+
+	65% {
+		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+	}
+
+	65.001%, 68% {
+		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+	}
+
+	95% {
+		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+	}
+}
 </style>
