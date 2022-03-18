@@ -1,6 +1,6 @@
 <script>
 	// Set the date we're counting down to
-	const countDownDate = new Date('Mar 18, 2022 17:00:00').getTime();
+	const countDownDate = new Date('Mar 18, 2022 16:00:00').getTime();
 	let showIframe = false;
   let generateImages = false;
 	let date = '';
