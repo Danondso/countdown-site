@@ -1,5 +1,6 @@
 <script>
 	// Set the date we're counting down to
+	import grimaceDanceUrl from '../../static/assets/grimace-dance.gif'
 	const countDownDate = new Date('Mar 18, 2022 16:00:00').getTime();
 	let showIframe = false;
   let generateImages = false;
@@ -46,7 +47,7 @@
 
   const rootPath = '../../';
   const fileNames = [
-    'images/grimace-dance.gif',
+    'assets/grimace-dance.gif',
     // 'static/2cfd287697d00b60.png',
     // 'static/3da55e899389a724.png',
     // 'static/3fbdc99088e276eb.gif',
@@ -112,7 +113,7 @@
           style:top=0
           style:left=0
       >
-        <img src={`${rootPath}${fileName}`} alt="That Flies Around" />
+        <img src={grimaceDanceUrl} alt="Some Grimace Art I stole from Twitter." />
       </div>
     {/each}
   {/if}
