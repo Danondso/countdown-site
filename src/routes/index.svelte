@@ -46,7 +46,7 @@
 
   const rootPath = '../../';
   const fileNames = [
-    'static/grimace-dance.gif',
+    'images/grimace-dance.gif',
     // 'static/2cfd287697d00b60.png',
     // 'static/3da55e899389a724.png',
     // 'static/3fbdc99088e276eb.gif',
