@@ -34,11 +34,11 @@
 		} else if (days <= 1 && days > 0) {
 			message = 'The penultimate day.';
 		} else if (days <= 0) {
-			message = 'Dawn of the final day.';
+			message = 'Thank you, and good night!';
 		}
 		if (distance < 0) {
 			clearInterval(countDown);
-			date = 'HE GONE!';
+			date = '*';
 			message = '';
 			showIframe = true;
       generateImages = true;
@@ -97,7 +97,7 @@
 	{#if showIframe}
 		<iframe
 			class="iframe"
-			src="https://www.youtube.com/embed/tiJzCahaN8w?autoplay=1"
+			src="https://youtu.be/BjZ0dNCHR5U"
 			title="Fake Your Death - My Chemical Romance"
 			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
